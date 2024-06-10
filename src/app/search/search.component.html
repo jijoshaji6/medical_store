@@ -1,0 +1,15 @@
+  <div class="container my-3">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Enter medicine name" id="name" aria-label="Medicine name" #searchKeyword>
+      <button class="btn btn-outline-success" type="button" (click)="searchMedicine(searchKeyword.value)">Search</button>
+    </div>
+    <div *ngIf="medicines.length > 0">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let medicine of filter">
+          {{ medicine.name }}
+          <a routerLink="/view/{{medicine.id}}" class="ms-4 btn btn-outline-success ">View Medicine</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<h1 class="text-center text-secondary">List of Medicines</h1>
+<div class="container text-center">
+    <app-search></app-search>
+    <a routerLink="/create"><button class="mt-4 btn btn-outline-success text-center ">Add Medicine</button></a>
+    <div class="row">
+        <div class="col-md mx-auto">
+            <div class="card mt-2" *ngFor="let item of allMedicine">
+                <div class="card-body d-flex justify-content-between">
+                    <h4 class="card-title">
+                        {{ item?.name }}
+                    </h4>
+                    <button type="button" class="btn btn-outline-primary" (click)="view(item.id)">
+                        View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

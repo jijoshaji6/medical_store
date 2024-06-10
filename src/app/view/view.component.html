@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h1 class="mb-4 text-center text-secondary">View Medicine</h1>
+    <div class="text-align-right">
+    <a routerLink="/read" class="btn btn-outline-primary mb-3 float-right">Back</a>
+  </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="card-title">ID: {{ medicine.id }}</p>
+              <p class="card-title">Name: {{ medicine.name }}</p>
+              <p class="card-text">Company: {{ medicine.company }}</p>
+              <p class="card-text">Expiry Date: {{ medicine.expiry_date }}</p>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-outline-warning m-5 pe-3" (click)="edit(medicine.id)">Edit</button>
+              <button class="btn btn-outline-danger" data-bs-target="#deleteModal" data-bs-toggle="modal">Delete</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Delete?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to Delete?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-danger" (click)="delete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
